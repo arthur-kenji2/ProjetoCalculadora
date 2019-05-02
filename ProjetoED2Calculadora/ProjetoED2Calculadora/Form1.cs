@@ -116,7 +116,77 @@ namespace ProjetoED2Calculadora
 
         private void btnIgual_Click(object sender, EventArgs e)
         {
+            Atribuir();
+        }
+
+        private void Atribuir()
+        {
+            lbSequencias.Text = "";
+            int n = 0;
+            int m = 0;
+            int h = 0;
+            int unicode = 65;
+            char character;
+            String expressao = txtVisor.Text;
+            Object[] vet = new Object[100];
+            Object[] valores = new Object[100];
+            Object[] operadores = new Object[100];
+            int inicio = 0;
+            for (int i = 0; i < expressao.Length; i++)
+            {
+                int p = 0;
+                while (Char.IsNumber(expressao, h))
+                {
+                    p++;
+                    h++;
+                    if (h >= expressao.Length)
+                        break;
+                }
+                vet[i] = expressao.Substring(inicio, p);
+                i++;
+                if (h < expressao.Length)
+                    vet[i] = expressao.Substring(h, 1);
+                h++;
+                inicio = h;
+                if (h < expressao.Length)
+                {
+                    if (!Char.IsNumber(expressao, h))
+                        vet[i] += expressao.Substring(h, 1);
+                }
+                else
+                    break;
+            }
+        
+            for (int i = 0; i < expressao.Length; i++)
+            {
+                if (Char.IsNumber(vet[i].ToString(),vet[i].ToString().Length))
+                {
+                    operadores[m] = vet[i];
+                    lbSequencias.Text += operadores[m];
+                    m++;
+
+                }
+                else
+                {
+                    valores[n] = vet[i];
+                    unicode += n;
+                    character = (char)unicode;
+                    lbSequencias.Text += character.ToString();
+                    n++;
+                }
+            }
+
+
 
         }
+
+        private void Converter()
+        {
+            PilhaVetor pilha = new PilhaVetor(1000);
+
+        }
+
+
     }
+
 }

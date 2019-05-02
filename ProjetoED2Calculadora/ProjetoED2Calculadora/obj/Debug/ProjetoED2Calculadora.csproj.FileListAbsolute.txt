@@ -1,0 +1,10 @@
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\bin\Debug\ProjetoED2Calculadora.exe.config
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\bin\Debug\ProjetoED2Calculadora.exe
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\bin\Debug\ProjetoED2Calculadora.pdb
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\obj\Debug\ProjetoED2Calculadora.csprojResolveAssemblyReference.cache
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\obj\Debug\ProjetoED2Calculadora.Form1.resources
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\obj\Debug\ProjetoED2Calculadora.Properties.Resources.resources
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\obj\Debug\ProjetoED2Calculadora.csproj.GenerateResource.cache
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\obj\Debug\ProjetoED2Calculadora.csproj.CoreCompileInputs.cache
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\obj\Debug\ProjetoED2Calculadora.exe
+C:\Users\ARTHUR\Desktop\ProjetoCalculadora-master\ProjetoED2Calculadora\ProjetoED2Calculadora\obj\Debug\ProjetoED2Calculadora.pdb
