@@ -123,14 +123,14 @@ namespace ProjetoED2Calculadora
         {
             lbSequencias.Text = "";
             int n = 0;
-            int m = 0;
             int h = 0;
-            int unicode = 65;
+            String[] infixa = new String[100];
+            int unicode;
             char character;
             String expressao = txtVisor.Text;
-            Object[] vet = new Object[100];
-            Object[] valores = new Object[100];
-            Object[] operadores = new Object[100];
+            PilhaVetor vet = new PilhaVetor(100);
+            PilhaVetor valores = new PilhaVetor(100);
+            PilhaVetor operadores = new PilhaVetor(100);
             int inicio = 0;
             for (int i = 0; i < expressao.Length; i++)
             {
@@ -139,50 +139,94 @@ namespace ProjetoED2Calculadora
                 {
                     p++;
                     h++;
+                    i++;
                     if (h >= expressao.Length)
                         break;
                 }
-                vet[i] = expressao.Substring(inicio, p);
-                i++;
+                vet.empilhar(expressao.Substring(inicio, p));
                 if (h < expressao.Length)
-                    vet[i] = expressao.Substring(h, 1);
+                    vet.empilhar(expressao.Substring(h, 1));
                 h++;
                 inicio = h;
                 if (h < expressao.Length)
                 {
                     if (!Char.IsNumber(expressao, h))
-                        vet[i] += expressao.Substring(h, 1);
+                        vet.empilhar(expressao.Substring(h, 1));
                 }
                 else
                     break;
             }
-        
-            for (int i = 0; i < expressao.Length; i++)
+            int tamanho = vet.tamanho();
+            for (int i = 0; i < tamanho; i++)
             {
-                if (Char.IsNumber(vet[i].ToString(),vet[i].ToString().Length))
-                {
-                    operadores[m] = vet[i];
-                    lbSequencias.Text += operadores[m];
-                    m++;
+                String s = vet.desempilhar().ToString();
+                if (s.Length == 1)
+                    if (!Char.IsNumber(Convert.ToChar(s)))
+                    {
+                        operadores.empilhar(s);
+                        infixa[i] = operadores.desempilhar().ToString();
+                    }
 
-                }
+                    else
+                    {
+                        valores.empilhar(s);
+                        infixa[i] = valores.desempilhar().ToString();
+                    }
                 else
                 {
-                    valores[n] = vet[i];
-                    unicode += n;
-                    character = (char)unicode;
-                    lbSequencias.Text += character.ToString();
-                    n++;
+                    valores.empilhar(s);
+                    infixa[i] = valores.desempilhar().ToString();
                 }
             }
 
-
-
+            for (int i = tamanho- 1; i >= 0; i--)
+            {
+                unicode = 65;
+                if (Char.IsNumber(infixa[i], infixa[i].Length - 1))
+                {
+                    unicode += n;
+                    character = (char)unicode;
+                    lbSequencias.Text += character;
+                    n++;
+                }
+                else
+                lbSequencias.Text += infixa[i];
+            }
         }
 
         private void Converter()
         {
-            PilhaVetor pilha = new PilhaVetor(1000);
+
+            PilhaVetor pilha = new PilhaVetor(1000); // Instancia e inicia a Pilha
+            while (lbSequencias.Text) Do
+//            Begin
+//Read(Entrada, Simbolo_Lido);
+//            If Not(Simbolo_Lido In ['(',')','+','-','*','/','­']) Then
+//Write(Simbolo_Lido) // escreve Operando na tela
+//Else // operador
+//Begin
+//Parar:= false;
+//            While(not parar) and(not umaPilha.estaVazia()) and
+//          (Ha_Precedencia(umaPilha.oTopo(), Simbolo_Lido)) Do
+//          begin
+//Operador_com_Maior_Precedencia:= umaPilha.desempilhar();
+//            If operador_com_Maior_Precedencia<> ‘(‘ then
+//            Write(Operador_com_Maior_Precedencia )
+//            Else
+//            Parar := true;
+//            End;
+//            If Simbolo_Lido<> ')' Then
+//umaPilha.empilhar(Simbolo_Lido)
+//Else { fará isso QUANDO o Pilha[TOPO] = '(' }
+//            Operador_com_Maior_Precedencia:= umaPilha.desempilhar();
+//            End;
+//            End; // While not EOF
+//            While not umaPilha.estaVazia() Do { Descarrega a Pilha Para a Saída }
+//            Begin
+//            Operador_com_Maior_Precedencia := umaPilha.desempilhar();
+//            If Operador_com_Maior_Precedencia<> '(' Then
+//Write(Operador_com_Maior_Precedencia);
+//            End;
 
         }
 
