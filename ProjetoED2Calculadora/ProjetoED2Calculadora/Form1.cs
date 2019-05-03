@@ -198,12 +198,10 @@ namespace ProjetoED2Calculadora
         {
 
             PilhaVetor pilha = new PilhaVetor(1000); // Instancia e inicia a Pilha
-            while (lbSequencias.Text) Do
-//            Begin
 //Read(Entrada, Simbolo_Lido);
 //            If Not(Simbolo_Lido In ['(',')','+','-','*','/','­']) Then
-//Write(Simbolo_Lido) // escreve Operando na tela
-//Else // operador
+//Write(Simbolo_Lido)
+//Else
 //Begin
 //Parar:= false;
 //            While(not parar) and(not umaPilha.estaVazia()) and
